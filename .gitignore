@@ -55,3 +55,10 @@ docs/_build/
 
 # PyBuilder
 target/
+/data/unlabeledTrainData.tsv.zip
+/data/unlabeledTrainData.tsv
+/data/testData.tsv.zip
+/data/labeledTrainData.tsv
+/data/labeledTrainData.tsv.zip
+/.ipynb_checkpoints/Tutorial_bag-checkpoint.ipynb
+/data/testData.tsv
