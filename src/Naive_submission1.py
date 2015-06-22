@@ -105,7 +105,7 @@ print 'scaling'
 scaler = preprocessing.StandardScaler()
 encoder = LabelEncoder()
 
-X_train = scaler.fit_transform(train_data_features.asarray()).astype(np.float32)
+X_train = scaler.fit_transform(train_data_features.toarray()).astype(np.float32)
 y = train['sentiment']
 
 y = encoder.fit_transform(y).astype(np.int32)
@@ -167,7 +167,7 @@ if not ind:
 if ind:
   test = pd.read_csv(os.path.join('..', 'data', 'test_cleaned1.csv'))
   test_data_features = vectorizer.fit_transform(train['review_cleaned'].values)
-  X_test = scaler.transform(test_data_features.asarray()).astype(np.float32)
+  X_test = scaler.transform(test_data_features.toarray()).astype(np.float32)
   clf.fit(X_test)
   submission = pd.DataFrame()
   submission['sentiment'] = clf.predict_proba()[:, 1]
