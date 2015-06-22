@@ -166,7 +166,7 @@ if not ind:
 
 if ind:
   test = pd.read_csv(os.path.join('..', 'data', 'test_cleaned1.csv'))
-  test_data_features = vectorizer.fit_transform(train['review_cleaned'].values)
+  test_data_features = vectorizer.transform(test['review_cleaned'].values)
   X_test = scaler.transform(test_data_features.toarray()).astype(np.float32)
   clf.fit(X_test)
   submission = pd.DataFrame()
